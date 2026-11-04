@@ -724,7 +724,7 @@ button, a, [role="button"] {
   .home-theme { width: 32px; }
   .home-hero { height: min(650px, calc(100svh - 178px)); min-height: 490px; }
   .home-hero-image { object-position: 51% center; }
-  .home-hero::after { background: color-mix(in oklch, var(--home-night) 48%, transparent); }
+  .home-hero::after { background: var(--home-banner-overlay); }
   .home-hero-content { padding-block: 45px 60px; }
   .home-eyebrow { font-size: 8px; }
   .home-hero h1 { font-size: 62px; }
@@ -790,7 +790,7 @@ button, a, [role="button"] {
   --home-banner-border: var(--border);
   --home-announcement-bg: oklch(0.92 0.06 185);
   --home-announcement-text: oklch(0.29 0.05 185);
-  --home-banner-overlay: oklch(0.99 0.005 185 / 0.88);
+  --home-banner-overlay: linear-gradient(to right, oklch(0.99 0.005 185 / 0.1), oklch(0.99 0.005 185 / 0.84) 30%, oklch(0.99 0.005 185 / 0.84) 70%, oklch(0.99 0.005 185 / 0.1));
   --home-motion-blend: multiply;
   --home-logo-color: oklch(0.46 0.09 185);
   --shadow-auth: 0 18px 60px color-mix(in oklch, var(--foreground) 5%, transparent);
