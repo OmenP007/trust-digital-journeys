@@ -71,7 +71,7 @@ export function LandingPage() {
         <div className="home-container">
           <div data-home-reveal className="home-film-heading"><span className="home-label">L’EXPÉRIENCE TRUST</span><h2>Moins d’incertitude.<br />Plus de mouvement.</h2><p>Transactions, portefeuille, livraison : votre activité, dans un seul espace.</p></div>
           <div data-home-reveal><PresentationVideo /></div>
-          <p className="home-film-caption">TRUST · Motion design original</p>
+          <p className="home-film-caption">TRUST</p>
         </div>
       </section>
       <section id="advantages" className="home-section">

@@ -22,3 +22,8 @@
 # TRUST authentication animation
 - [x] Add a shared interactive left-side TRUST animation without changing either form.
 - [x] Verify both pages, pointer interaction, themes, mobile and reduced motion; live account access remains blocked by the external TRUST service.
+
+# TRUST new presentation and loader
+- [ ] Use the original trust-motion SVG in the shared loading screen.
+- [ ] Create and integrate a new presentation motion without test-environment labels.
+- [ ] Verify loading, presentation playback, themes and mobile.

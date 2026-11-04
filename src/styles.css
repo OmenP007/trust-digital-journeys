@@ -842,6 +842,7 @@ button, a, [role="button"] {
 .home-video-control:hover { color: var(--home-banner-text); background: var(--secondary); }
 .home-video-duration { color: var(--home-banner-subtle); }
 .trust-loader { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; padding: 40px; background: var(--background); color: var(--foreground); }
+.trust-loader-original { display: block; width: min(400px, 78vw); height: auto; aspect-ratio: 603 / 206; object-fit: contain; }
 .trust-loader-fullscreen { position: fixed; inset: 0; z-index: 150; animation: trust-loader-arrive 160ms var(--ease-premium); }
 .trust-loader-mark { width: 80px; height: 80px; display: grid; place-items: center; animation: trust-logo-breathe 1.5s ease-in-out infinite; }
 .trust-loader-track { width: 100px; height: 2px; background: var(--border); overflow: hidden; }
