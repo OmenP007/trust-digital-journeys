@@ -5,8 +5,9 @@ export const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDi
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
+      data-trust-card
       className={cn(
-        'rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-[#131820] text-slate-900 dark:text-[#F4F6FC] shadow-sm hover:shadow-md transition-all duration-200 ease-out-expo',
+        'trust-motion-card rounded-2xl border border-border bg-card text-card-foreground',
         className
       )}
       {...props}
