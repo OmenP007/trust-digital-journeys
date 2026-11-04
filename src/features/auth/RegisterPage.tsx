@@ -5,8 +5,11 @@ import { Button } from '@/components/ui/TrustButton';
 import { Input } from '@/components/ui/TrustInput';
 import { useAuth } from '@/context/AuthContext';
 import { TrustLogo } from '@/components/ui/TrustLogo';
+import { useTheme } from '@/context/ThemeContext';
+import { Sun, Moon } from 'lucide-react';
 
 export const RegisterPage: React.FC = () => {
+  const { resolvedTheme, toggleTheme } = useTheme();
   const navigate = useNavigate();
   const { register } = useAuth();
 
@@ -46,12 +49,8 @@ export const RegisterPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0B0F14] flex flex-col justify-center py-12 sm:px-6 lg:px-8 transition-colors relative overflow-hidden">
-      {/* Ambient glow */}
-      <div
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full blur-[140px] pointer-events-none"
-        style={{ background: 'rgba(123,61,255,0.08)' }}
-      />
+    <div className="trust-auth-page min-h-screen bg-background flex flex-col justify-center py-12 sm:px-6 lg:px-8 transition-colors relative">
+      <Button size="icon" variant="ghost" className="trust-auth-theme" title="Basculer le thème" aria-label="Basculer le thème" onClick={toggleTheme}>{resolvedTheme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}</Button>
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center opacity-0 animate-enter stagger-1" style={{ animationFillMode: 'forwards' }}>
         <Link to="/" className="inline-flex items-center gap-3">
@@ -66,7 +65,7 @@ export const RegisterPage: React.FC = () => {
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md px-4 sm:px-0 opacity-0 animate-modal-enter" style={{ animationFillMode: 'forwards', animationDelay: '120ms' }}>
-        <div className={`bg-white dark:bg-[#131820] py-8 px-6 sm:px-10 shadow-xl rounded-3xl border border-slate-200/80 dark:border-slate-800/80 transition-all duration-300 ${error ? 'animate-shake' : ''}`}>
+        <div className={`trust-auth-form bg-card py-8 px-6 sm:px-10 rounded-lg border border-border transition-all duration-300 ${error ? 'animate-shake' : ''}`}>
           {error && (
             <div className="mb-6 p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-500 text-xs flex items-center gap-2 animate-enter" style={{ animationFillMode: 'forwards' }}>
               <AlertCircle size={16} className="shrink-0" />

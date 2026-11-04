@@ -9,7 +9,7 @@ export const DashboardLayout: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0B0F14] text-slate-900 dark:text-[#F4F6FC] transition-colors duration-300">
+    <div className="trust-workspace min-h-screen bg-background text-foreground transition-colors duration-300">
       <Sidebar
         collapsed={collapsed}
         onToggleCollapse={() => setCollapsed(!collapsed)}
@@ -26,7 +26,7 @@ export const DashboardLayout: React.FC = () => {
         <TopBar onOpenMobileNav={() => setMobileOpen(true)} />
 
         {/* Page transition wrapper — PRIMARY layer: fade + translateY */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto animate-page-enter">
+        <main className="trust-workspace-content flex-1 p-4 sm:p-6 lg:p-10 max-w-7xl w-full mx-auto animate-page-enter">
           <Outlet />
         </main>
 

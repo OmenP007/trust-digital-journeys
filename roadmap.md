@@ -12,3 +12,9 @@
 - [x] Redesign the homepage with Hostinger-inspired presentation while preserving TRUST navigation and transaction logic.
 - [x] Integrate the existing presentation video and coordinated GSAP motion.
 - [x] Verify desktop/mobile navigation, video playback, FAQ and reduced-motion behavior.
+
+# TRUST complete interface refresh
+- [x] Replace the generated film with the original frontend motion video and integrate it in place of the hero TRUST wordmark.
+- [x] Add a logo loading animation and theme-aware homepage banner.
+- [x] Refresh all page presentation and shared controls without changing authentication, permissions or transaction behavior.
+- [x] Verify public flows, themes, loading and video; authenticated business flows remain unverified because the external TRUST service is not connected.

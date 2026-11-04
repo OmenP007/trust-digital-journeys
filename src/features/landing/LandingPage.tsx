@@ -6,6 +6,7 @@ import { TrustLogo } from '@/components/ui/TrustLogo';
 import { useTheme } from '@/context/ThemeContext';
 import { useHomeMotion } from './useHomeMotion';
 import { PresentationVideo } from './components/PresentationVideo';
+import { OriginalMotion } from './components/OriginalMotion';
 import commerceHero from '@/assets/trust-commerce-hero.jpg';
 
 const navigation = [['#how-it-works', 'Fonctionnement'], ['#advantages', 'Avantages'], ['#solutions', 'Solutions'], ['#developers', 'Développeurs'], ['#faq', 'FAQ']];
@@ -35,7 +36,7 @@ export function LandingPage() {
     <div className="home-announcement"><ShieldCheck size={14} /><span>Votre confiance mérite plus qu’une promesse.</span><a href="#how-it-works">Découvrez TRUST <ArrowUpRight size={14} /></a></div>
     <header className="home-header">
       <nav className="home-nav home-container" aria-label="Navigation principale">
-        <a href="/" aria-label="TRUST — Accueil"><TrustLogo theme="white" height={27} /></a>
+        <a href="/" aria-label="TRUST — Accueil"><TrustLogo height={27} /></a>
         <div className="home-desktop-nav">{navigation.map(([href, label]) => <a key={href} href={href}>{label}</a>)}</div>
         <div className="home-nav-actions">
           <Button variant="ghost" size="icon" className="home-theme" aria-label="Basculer le thème" title={resolvedTheme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre'} onClick={toggleTheme}>{resolvedTheme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}</Button>
@@ -51,7 +52,8 @@ export function LandingPage() {
         <img className="home-hero-image" src={commerceHero} alt="Une commerçante prépare une commande et un entrepreneur consulte son téléphone." width={1920} height={1088} fetchPriority="high" />
         <div className="home-hero-content home-container">
           <div data-home-enter className="home-eyebrow"><span className="home-live-dot" />LA CONFIANCE, À CHAQUE TRANSACTION</div>
-          <h1 id="home-title" data-home-enter>TRUST<span>Payez en confiance.</span><span className="home-title-accent">Vendez sereinement.</span></h1>
+          <div data-home-enter><OriginalMotion /></div>
+          <h1 id="home-title" data-home-enter><span>Payez en confiance.</span><span className="home-title-accent">Vendez sereinement.</span></h1>
           <p data-home-enter>Entre le paiement et la livraison,<br className="hidden sm:block" /> il y a TRUST. Vos fonds protégés, votre accord respecté.</p>
           <div data-home-enter className="home-hero-actions"><Button size="lg" onClick={() => navigate('/register')}>Créer mon compte <ArrowUpRight size={18} /></Button><a className="home-text-link" href="#presentation"><span className="home-play-icon">▶</span> Voir TRUST en action</a></div>
           <div data-home-enter className="home-hero-proof"><ShieldCheck size={16} /> Fonds en séquestre <span /> Validation par code OTP</div>
@@ -70,7 +72,7 @@ export function LandingPage() {
         <div className="home-container">
           <div data-home-reveal className="home-film-heading"><span className="home-label">L’EXPÉRIENCE TRUST</span><h2>Moins d’incertitude.<br />Plus de mouvement.</h2><p>Transactions, portefeuille, livraison : votre activité, dans un seul espace.</p></div>
           <div data-home-reveal><PresentationVideo /></div>
-          <p className="home-film-caption">Présentation TRUST · Les espaces connectés sont présentés à titre illustratif.</p>
+          <p className="home-film-caption">TRUST · Motion design original</p>
         </div>
       </section>
       <section id="advantages" className="home-section">

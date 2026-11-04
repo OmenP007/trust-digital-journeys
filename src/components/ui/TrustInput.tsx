@@ -14,7 +14,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="w-full space-y-1.5">
         {label && (
-          <label htmlFor={inputId} className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+          <label htmlFor={inputId} className="block text-xs font-semibold text-foreground">
             {label}
           </label>
         )}
@@ -22,17 +22,17 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           id={inputId}
           type={type}
           className={cn(
-            'flex h-11 w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#1A2030] px-3.5 py-2 text-sm text-slate-900 dark:text-[#F4F6FC] placeholder:text-slate-400 dark:placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B3DFF] focus-visible:border-transparent disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-150',
-            error && 'border-rose-500 focus-visible:ring-rose-500',
+            'flex h-12 w-full rounded-md border border-input bg-card px-3.5 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-transparent disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-150',
+            error && 'border-destructive focus-visible:ring-destructive',
             className
           )}
           ref={ref}
           {...props}
         />
         {error ? (
-          <p className="text-xs text-rose-500 font-medium">{error}</p>
+          <p className="text-xs text-destructive font-medium">{error}</p>
         ) : helperText ? (
-          <p className="text-xs text-slate-500 dark:text-slate-400">{helperText}</p>
+          <p className="text-xs text-muted-foreground">{helperText}</p>
         ) : null}
       </div>
     );
