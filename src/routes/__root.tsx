@@ -14,6 +14,7 @@ import { ThemeProvider } from '@/context/ThemeContext';
 import { AuthProvider } from '@/context/AuthContext';
 import { ToastProvider } from '@/context/ToastContext';
 import { PageMotion } from '@/components/layout/PageMotion';
+import { StartupLoader } from '@/components/layout/StartupLoader';
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
@@ -126,7 +127,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <ThemeProvider><AuthProvider><ToastProvider><PageMotion><Outlet /></PageMotion></ToastProvider></AuthProvider></ThemeProvider>
+      <ThemeProvider><AuthProvider><ToastProvider><StartupLoader /><PageMotion><Outlet /></PageMotion></ToastProvider></AuthProvider></ThemeProvider>
     </QueryClientProvider>
   );
 }
