@@ -13,3 +13,4 @@
 - Preserve original TRUST assets, CSS selectors, and page structure during import repairs to maintain source fidelity.
 - TRUST's Django API is an external dependency configured with VITE_API_URL; never simulate successful authentication or payments when it is absent.
 - Coordinate interface motion through PageMotion and global CSS tokens; keep fixed navigation unaffected and honor reduced-motion preferences.
+- The homepage uses scoped home tokens and client-effect GSAP choreography; keep animation cleanup and reduced-motion support to avoid affecting other TRUST pages.
