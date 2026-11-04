@@ -36,7 +36,7 @@ export function LandingPage() {
     <div className="home-announcement"><ShieldCheck size={14} /><span>Votre confiance mérite plus qu’une promesse.</span><a href="#how-it-works">Découvrez TRUST <ArrowUpRight size={14} /></a></div>
     <header className="home-header">
       <nav className="home-nav home-container" aria-label="Navigation principale">
-        <a href="/" aria-label="TRUST — Accueil"><TrustLogo height={27} /></a>
+        <a href="/" aria-label="TRUST — Accueil"><span className="dark:hidden"><TrustLogo theme="black" height={27} /></span><span className="hidden dark:block"><TrustLogo theme="white" height={27} /></span></a>
         <div className="home-desktop-nav">{navigation.map(([href, label]) => <a key={href} href={href}>{label}</a>)}</div>
         <div className="home-nav-actions">
           <Button variant="ghost" size="icon" className="home-theme" aria-label="Basculer le thème" title={resolvedTheme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre'} onClick={toggleTheme}>{resolvedTheme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}</Button>
