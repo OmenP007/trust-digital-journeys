@@ -12,3 +12,4 @@
 - Keep the imported TRUST frontend on TanStack file routes; navigation compatibility helpers use TanStack APIs, not a second router.
 - Preserve original TRUST assets, CSS selectors, and page structure during import repairs to maintain source fidelity.
 - TRUST's Django API is an external dependency configured with VITE_API_URL; never simulate successful authentication or payments when it is absent.
+- Coordinate interface motion through PageMotion and global CSS tokens; keep fixed navigation unaffected and honor reduced-motion preferences.

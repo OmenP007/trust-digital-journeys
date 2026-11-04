@@ -21,33 +21,21 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       'transition-all duration-150 ease-[cubic-bezier(0.2,0,0,1)] ' +
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ' +
       'disabled:opacity-50 disabled:pointer-events-none select-none rounded-xl ' +
-      'active:scale-[0.97] active:opacity-90';
+      'trust-motion-button active:scale-[0.97] active:opacity-90';
 
     const variants: Record<string, string> = {
       primary:
-        'bg-[#7B3DFF] text-white ' +
-        'hover:bg-[#682ae8] hover:shadow-[0_6px_20px_rgba(123,61,255,0.3)] ' +
-        'shadow-[0_3px_12px_rgba(123,61,255,0.2)] focus-visible:ring-[#7B3DFF]',
+        'trust-button-primary bg-primary text-primary-foreground focus-visible:ring-ring',
       secondary:
-        'bg-slate-100 dark:bg-[#1E2533] text-slate-900 dark:text-[#F4F6FC] ' +
-        'hover:bg-slate-200 dark:hover:bg-[#252E40] ' +
-        'border border-slate-200 dark:border-slate-800',
+        'bg-secondary text-secondary-foreground hover:bg-muted border border-border',
       outline:
-        'border border-slate-200 dark:border-slate-800 ' +
-        'text-slate-700 dark:text-slate-300 ' +
-        'hover:bg-slate-100 dark:hover:bg-slate-900/60 hover:text-slate-900 dark:hover:text-white ' +
-        'hover:border-slate-300 dark:hover:border-slate-700',
+        'border border-border text-foreground hover:bg-secondary',
       ghost:
-        'text-slate-600 dark:text-slate-400 ' +
-        'hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50',
+        'text-muted-foreground hover:text-foreground hover:bg-secondary',
       danger:
-        'bg-rose-500/10 text-rose-500 border border-rose-500/20 ' +
-        'hover:bg-rose-500 hover:text-white hover:border-rose-500 ' +
-        'hover:shadow-[0_4px_14px_rgba(244,63,94,0.25)] focus-visible:ring-rose-500',
+        'bg-destructive/10 text-destructive border border-destructive/20 hover:bg-destructive hover:text-destructive-foreground focus-visible:ring-destructive',
       accent:
-        'bg-[#00E5FF] text-[#0B0F14] font-semibold ' +
-        'hover:bg-[#00cce6] hover:shadow-[0_6px_20px_rgba(0,229,255,0.3)] ' +
-        'shadow-[0_3px_12px_rgba(0,229,255,0.2)] focus-visible:ring-[#00E5FF]',
+        'trust-button-accent bg-accent text-accent-foreground font-semibold focus-visible:ring-accent',
     };
 
     const sizes: Record<string, string> = {

@@ -510,3 +510,40 @@ button, a, [role="button"] {
   transition: background var(--dur-quick) ease;
 }
 ::-webkit-scrollbar-thumb:hover { background: rgba(123, 61, 255, 0.42); }
+
+/* Shared page choreography: fade the page without changing fixed positioning. */
+:root {
+  --motion-page-duration: 420ms;
+  --motion-item-duration: 480ms;
+  --shadow-motion-card: 0 10px 30px color-mix(in oklch, var(--foreground) 8%, transparent);
+  --shadow-motion-primary: 0 6px 22px color-mix(in oklch, var(--primary) 25%, transparent);
+  --shadow-motion-accent: 0 6px 22px color-mix(in oklch, var(--accent) 20%, transparent);
+}
+@keyframes trust-page-crossfade {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+@keyframes trust-content-arrive {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.trust-page-motion { animation: trust-page-crossfade var(--motion-page-duration) var(--ease-premium) both; }
+[data-motion-visible="true"] { animation: trust-content-arrive var(--motion-item-duration) var(--ease-entrance) both; }
+[data-motion-order="1"] { animation-delay: 45ms; }
+[data-motion-order="2"] { animation-delay: 90ms; }
+[data-motion-order="3"] { animation-delay: 135ms; }
+[data-motion-order="4"] { animation-delay: 180ms; }
+.trust-motion-card { transition: border-color var(--dur-standard), box-shadow var(--dur-standard); }
+.trust-motion-card:hover { border-color: color-mix(in oklch, var(--primary) 38%, var(--border)); box-shadow: var(--shadow-motion-card); }
+.trust-motion-button { transition: transform var(--dur-quick) var(--ease-snappy), background-color var(--dur-quick), box-shadow var(--dur-standard); }
+.trust-motion-button > svg:last-child { transition: transform var(--dur-standard) var(--ease-entrance); }
+.trust-motion-button:hover > svg:last-child { transform: translateX(3px); }
+.trust-button-primary:hover { box-shadow: var(--shadow-motion-primary); }
+.trust-button-accent:hover { box-shadow: var(--shadow-motion-accent); }
+.trust-page-motion input { transition: border-color var(--dur-quick), box-shadow var(--dur-quick); }
+.trust-page-motion input:focus { box-shadow: 0 0 0 3px color-mix(in oklch, var(--primary) 12%, transparent); }
+.trust-page-motion [aria-expanded] svg { transition: transform var(--dur-standard) var(--ease-entrance); }
+@media (prefers-reduced-motion: reduce) {
+  .trust-page-motion, [data-motion-visible] { animation: none; }
+  .trust-motion-button:hover > svg:last-child { transform: none; }
+}
