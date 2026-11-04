@@ -14,3 +14,5 @@
 - TRUST's Django API is an external dependency configured with VITE_API_URL; never simulate successful authentication or payments when it is absent.
 - Coordinate interface motion through PageMotion and global CSS tokens; keep fixed navigation unaffected and honor reduced-motion preferences.
 - The homepage uses scoped home tokens and client-effect GSAP choreography; keep animation cleanup and reduced-motion support to avoid affecting other TRUST pages.
+- Refresh imported page presentation through scoped semantic compatibility styles and shared UI; keep API calls, role gates and transaction state untouched.
+- Reuse TrustLoader for startup, router-pending and protected/checkout loading states; the bounded startup animation must never wait on external services.

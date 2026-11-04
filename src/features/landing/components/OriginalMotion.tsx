@@ -27,7 +27,7 @@ export function OriginalMotion() {
     return () => { observer.disconnect(); preference.removeEventListener('change', stop); };
   }, [source]);
   return <div className="home-original-motion">
-    {failed ? <TrustLogo height={58} /> : <video ref={video} key={source} src={source} muted playsInline loop preload="auto" aria-label="Motion design original TRUST" onError={() => setFailed(true)} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} />}
+    <div className="home-original-visual">{failed ? <TrustLogo height={58} /> : <video ref={video} key={source} src={source} muted playsInline loop preload="auto" aria-label="Motion design original TRUST" onError={() => setFailed(true)} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} />}</div>
     <Button size="icon" variant="ghost" className="home-original-control" aria-label={playing ? 'Mettre le logo animé en pause' : 'Lire le logo animé'} title={playing ? 'Mettre le logo animé en pause' : 'Lire le logo animé'} onClick={() => { const player = video.current; if (!player) return; if (player.paused) void player.play().catch(() => setFailed(true)); else player.pause(); }}>{playing ? <Pause size={14} /> : <Play size={14} />}</Button>
   </div>;
 }
