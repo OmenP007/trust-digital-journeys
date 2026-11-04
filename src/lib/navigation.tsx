@@ -10,7 +10,7 @@ export function useNavigate() {
  };
 }
 export const useLocation = useRouterLocation;
-export function useParams<T extends Record<string,string>>() { return useRouterState({select: state => state.matches.at(-1)?.params ?? {}}) as Partial<T>; }
+export function useParams<T extends Record<string,string>>() { const state = useRouterState(); return (state.matches.at(-1)?.params ?? {}) as Partial<T>; }
 export function useSearchParams() { const location = useRouterLocation(); return [new URLSearchParams(location.searchStr)] as const; }
 type LinkProps = Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'className'> & {to: string; className?: string | ((state: {isActive:boolean}) => string)};
 export function Link({to, className, children, onClick, title}: LinkProps) {
