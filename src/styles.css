@@ -1,144 +1,512 @@
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss";
 @import "tw-animate-css";
-
 @custom-variant dark (&:is(.dark *));
-
-/*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
- */
-
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+ --color-background: var(--background);
+ --color-foreground: var(--foreground);
+ --color-card: var(--card);
+ --color-card-foreground: var(--card-foreground);
+ --color-popover: var(--popover);
+ --color-popover-foreground: var(--popover-foreground);
+ --color-primary: var(--primary);
+ --color-primary-foreground: var(--primary-foreground);
+ --color-secondary: var(--secondary);
+ --color-secondary-foreground: var(--secondary-foreground);
+ --color-muted: var(--muted);
+ --color-muted-foreground: var(--muted-foreground);
+ --color-accent: var(--accent);
+ --color-accent-foreground: var(--accent-foreground);
+ --color-destructive: var(--destructive);
+ --color-destructive-foreground: var(--destructive-foreground);
+ --color-border: var(--border);
+ --color-input: var(--input);
+ --color-ring: var(--ring);
+ --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+ --font-syne: "Syne", sans-serif;
+ --font-cinzel: "Cinzel", serif;
+ --font-playfair: "Playfair Display", serif;
+ --font-space: "Space Mono", monospace;
+ --font-unbounded: "Unbounded", sans-serif;
+ --font-jakarta: "Plus Jakarta Sans", sans-serif;
+ --radius-lg: var(--radius);
+ --radius-md: calc(var(--radius) - 2px);
+ --radius-sm: calc(var(--radius) - 4px);
 }
 
-:root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
-}
 
-.dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+/* ─── TRUST Motion Design System ─────────────────────────────────────────────
+ * Archetype: Premium + Corporate (FinTech)
+ * Signature easing: --ease-premium (0.4,0,0.2,1)
+ * Duration palette: quick 150ms / standard 300ms / slow 500ms
+ * Entrance pattern: translateY(12px) + opacity 0 → standard
+ * 0% overshoot on financial data, max 5% on success states
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+@layer base {
+  :root {
+    /* Colors */
+    --background: oklch(0.984 0.003 247.858);
+    --foreground: oklch(0.208 0.042 265.755);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.208 0.042 265.755);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.208 0.042 265.755);
+    --primary: oklch(0.586 0.264 293);
+    --primary-foreground: oklch(0.984 0.003 247.858);
+    --secondary: oklch(0.968 0.007 247.896);
+    --secondary-foreground: oklch(0.208 0.042 265.755);
+    --muted: oklch(0.968 0.007 247.896);
+    --muted-foreground: oklch(0.554 0.046 257.417);
+    --accent: oklch(0.842 0.145 210);
+    --accent-foreground: oklch(0.208 0.042 265.755);
+    --destructive: oklch(0.637 0.237 25.331);
+    --destructive-foreground: oklch(0.984 0.003 247.858);
+    --border: oklch(0.929 0.013 255.508);
+    --input: oklch(0.929 0.013 255.508);
+    --ring: oklch(0.586 0.264 293);
+    --radius: 0.75rem;
+
+    /* Motion tokens — Premium/Corporate FinTech */
+    --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);    /* On-screen transitions */
+    --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);  /* Entrances: fast start, silk landing */
+    --ease-exit: cubic-bezier(0.3, 0, 1, 1);          /* Exits: gentle start, fast away */
+    --ease-snappy: cubic-bezier(0.2, 0, 0, 1);        /* Snappy actions, decisive */
+    --ease-gentle: cubic-bezier(0.4, 0, 0.2, 1);      /* Ambient, background */
+
+    /* Duration palette (Corporate standard) */
+    --dur-instant: 80ms;   /* Tooltips, micro */
+    --dur-quick: 150ms;    /* Button press, hover */
+    --dur-standard: 300ms; /* Cards, icons, state changes */
+    --dur-modal: 380ms;    /* Modals, panels, sidebars */
+    --dur-page: 450ms;     /* Page transitions, reveals */
+    --dur-ambient: 2800ms; /* Breathing, loops */
+  }
+
+  .dark {
+    --background: oklch(0.166 0.015 255);
+    --foreground: oklch(0.974 0.008 267);
+    --card: oklch(0.209 0.018 257);
+    --card-foreground: oklch(0.974 0.008 267);
+    --popover: oklch(0.209 0.018 257);
+    --popover-foreground: oklch(0.974 0.008 267);
+    --primary: oklch(0.586 0.264 293);
+    --primary-foreground: oklch(0.984 0.003 247.858);
+    --secondary: oklch(0.275 0.025 262);
+    --secondary-foreground: oklch(0.984 0.003 247.858);
+    --muted: oklch(0.275 0.025 262);
+    --muted-foreground: oklch(0.704 0.04 256.788);
+    --accent: oklch(0.842 0.145 210);
+    --accent-foreground: oklch(0.208 0.042 265.755);
+    --destructive: oklch(0.637 0.237 25.331);
+    --destructive-foreground: oklch(0.984 0.003 247.858);
+    --border: oklch(0.275 0.025 262);
+    --input: oklch(0.275 0.025 262);
+    --ring: oklch(0.586 0.264 293);
+  }
 }
 
 @layer base {
   * {
-    border-color: var(--color-border);
+    @apply border-border;
   }
-
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    @apply bg-background text-foreground font-sans antialiased;
+    
+    min-height: 100vh;
   }
 }
+
+/* ─── KEYFRAMES ──────────────────────────────────────────────────────────────
+ * Three layers: Primary (main action) · Secondary (supporting) · Ambient (life)
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+/* PRIMARY — entrance de base TRUST */
+@keyframes trust-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* PRIMARY — scale in pour modales et overlays */
+@keyframes trust-modal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* PRIMARY — slide in depuis la gauche (sidebar) */
+@keyframes trust-slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* SECONDARY — nav active indicator slide */
+@keyframes trust-indicator {
+  from {
+    opacity: 0;
+    transform: scaleY(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* SECONDARY — shake d'erreur horizontal (3 oscillations) */
+@keyframes trust-shake {
+  0%, 100% { transform: translateX(0); }
+  16%  { transform: translateX(-8px); }
+  33%  { transform: translateX(7px); }
+  50%  { transform: translateX(-6px); }
+  67%  { transform: translateX(5px); }
+  83%  { transform: translateX(-3px); }
+}
+
+/* SECONDARY — checkmark draw success (stroke-dashoffset) */
+@keyframes trust-check-draw {
+  from { stroke-dashoffset: 120; opacity: 0.6; }
+  to   { stroke-dashoffset: 0;   opacity: 1; }
+}
+
+/* SECONDARY — pop léger succès (5% max overshoot, Corporate) */
+@keyframes trust-success-pop {
+  0%   { transform: scale(0.92); opacity: 0; }
+  60%  { transform: scale(1.03); opacity: 1; }
+  100% { transform: scale(1);    opacity: 1; }
+}
+
+/* AMBIENT — pulsation douce pour statuts actifs (BLOCKED escrow) */
+@keyframes trust-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.55; }
+}
+
+/* AMBIENT — gradient shimmer sur skeleton loaders */
+@keyframes trust-shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+/* AMBIENT — glow flottant arrière-plan hero */
+@keyframes trust-glow-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(8px, -12px) scale(1.04); }
+  66%       { transform: translate(-6px, 8px) scale(0.97); }
+}
+
+/* AMBIENT — iridescent text shimmer (TRUST brand signature) */
+@keyframes trust-text-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────── */
+
+/* 404 Face animation keyframes (Playful — illustration exception) */
+@keyframes face-eyes {
+  from { transform: translateY(112.5px); }
+  to   { transform: translateY(15px); }
+}
+@keyframes face-eye-lid {
+  0%, 40%, 45%, 100% { transform: translateY(0); }
+  42.5%              { transform: translateY(17.5px); }
+}
+@keyframes face-pupil {
+  0%, 37.5%, 40%, 45%, 87.5%, 100% {
+    stroke-dashoffset: 0;
+    transform: translate(0, 0);
+  }
+  12.5%, 25%, 62.5%, 75% {
+    transform: translate(-35px, 0);
+  }
+  42.5% {
+    stroke-dashoffset: 35;
+    transform: translate(0, 17.5px);
+  }
+}
+@keyframes face-mouth-left {
+  from, 50% { stroke-dashoffset: -102; }
+  to         { stroke-dashoffset: 0; }
+}
+@keyframes face-mouth-right {
+  from, 50% { stroke-dashoffset: 102; }
+  to         { stroke-dashoffset: 0; }
+}
+@keyframes face-nose {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(0, 22.5px); }
+}
+
+/* ─── ANIMATION UTILITY CLASSES ──────────────────────────────────────────────*/
+
+/* Page / view transitions */
+.animate-page-enter {
+  animation: trust-enter var(--dur-page) var(--ease-entrance) forwards;
+}
+
+/* Standard card / content entrances */
+.animate-enter {
+  animation: trust-enter var(--dur-standard) var(--ease-entrance) forwards;
+}
+
+/* Modal / dialog enter */
+.animate-modal-enter {
+  animation: trust-modal-in var(--dur-modal) var(--ease-entrance) forwards;
+}
+
+/* Success state */
+.animate-success {
+  animation: trust-success-pop 380ms var(--ease-entrance) forwards;
+}
+
+/* Error shake */
+.animate-shake {
+  animation: trust-shake 380ms var(--ease-snappy) forwards;
+}
+
+/* Ambient pulse (BLOCKED escrow indicator) */
+.animate-trust-pulse {
+  animation: trust-pulse var(--dur-ambient) ease-in-out infinite;
+}
+
+/* Ambient glow float (landing hero) */
+.animate-glow-float {
+  animation: trust-glow-float 7s ease-in-out infinite;
+}
+
+/* Ambient text shimmer */
+.animate-text-shimmer {
+  background-size: 200% auto;
+  animation: trust-text-shimmer 3s ease-in-out infinite;
+}
+
+/* Legacy alias — fade-in = page-enter */
+.animate-fade-in {
+  animation: trust-enter var(--dur-page) var(--ease-entrance) forwards;
+}
+
+/* Stagger utilities — micro-cascade 40ms (1/3 rule, total < 200ms for 5 items) */
+.stagger-1 { animation-delay: 40ms; }
+.stagger-2 { animation-delay: 80ms; }
+.stagger-3 { animation-delay: 120ms; }
+.stagger-4 { animation-delay: 160ms; }
+.stagger-5 { animation-delay: 200ms; }
+
+/* Skeleton shimmer */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(123, 61, 255, 0.06) 25%,
+    rgba(123, 61, 255, 0.12) 50%,
+    rgba(123, 61, 255, 0.06) 75%
+  );
+  background-size: 800px 100%;
+  animation: trust-shimmer 1.6s ease-in-out infinite;
+}
+
+/* ─── SCROLL REVEAL — Landing page entrance animations ───────────────────── */
+
+/* Reveal from bottom (standard) */
+@keyframes trust-reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reveal from left */
+@keyframes trust-reveal-left {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Reveal from right */
+@keyframes trust-reveal-right {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale in reveal */
+@keyframes trust-reveal-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Initial state for scroll-reveal elements */
+.reveal {
+  opacity: 0;
+}
+
+/* Triggered when IntersectionObserver adds .revealed class */
+.reveal.revealed {
+  animation: trust-reveal-up 0.65s var(--ease-entrance) forwards;
+}
+
+.reveal-left.revealed {
+  animation: trust-reveal-left 0.65s var(--ease-entrance) forwards;
+}
+
+.reveal-right.revealed {
+  animation: trust-reveal-right 0.65s var(--ease-entrance) forwards;
+}
+
+.reveal-scale.revealed {
+  animation: trust-reveal-scale 0.55s var(--ease-entrance) forwards;
+}
+
+/* Stagger delays for grid items */
+.reveal-d1 { animation-delay: 60ms; }
+.reveal-d2 { animation-delay: 140ms; }
+.reveal-d3 { animation-delay: 220ms; }
+.reveal-d4 { animation-delay: 300ms; }
+.reveal-d5 { animation-delay: 380ms; }
+
+/* ─── BUTTON GLOW — Premium CTA effects ──────────────────────────────────── */
+
+@keyframes trust-btn-glow-pulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(123, 61, 255, 0.30), 0 0 0 0 rgba(123, 61, 255, 0.0); }
+  50%       { box-shadow: 0 12px 36px rgba(123, 61, 255, 0.45), 0 0 0 6px rgba(123, 61, 255, 0.08); }
+}
+
+.btn-glow-primary {
+  animation: trust-btn-glow-pulse 3s ease-in-out infinite;
+  transition: transform var(--dur-standard) var(--ease-premium),
+              box-shadow var(--dur-standard) var(--ease-premium);
+}
+.btn-glow-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  animation: none;
+  box-shadow: 0 16px 40px rgba(123, 61, 255, 0.50);
+}
+
+/* ─── AMBIENT GRADIENT BLOBS — Landing hero ──────────────────────────────── */
+
+@keyframes trust-blob-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  25%  { transform: translate(20px, -15px) scale(1.05); }
+  50%  { transform: translate(-10px, 20px) scale(0.97); }
+  75%  { transform: translate(15px, 10px) scale(1.03); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.animate-blob {
+  animation: trust-blob-drift 12s ease-in-out infinite;
+}
+.animate-blob-delay {
+  animation: trust-blob-drift 16s ease-in-out infinite reverse;
+  animation-delay: -4s;
+}
+
+/* ─── NUMBER COUNTER / STAT HIGHLIGHT ───────────────────────────────────── */
+
+@keyframes trust-stat-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.reveal-stat.revealed {
+  animation: trust-stat-reveal 0.5s var(--ease-entrance) forwards;
+}
+
+/* ─── CARD GLOW — Hover border light effect ──────────────────────────────── */
+
+.card-premium {
+  transition: transform var(--dur-standard) var(--ease-premium),
+              box-shadow var(--dur-standard) var(--ease-premium),
+              border-color var(--dur-standard) var(--ease-premium);
+}
+.card-premium:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(123, 61, 255, 0.12),
+              0 4px 16px rgba(0, 229, 255, 0.06);
+}
+
+/* ─── REDUCED MOTION — Accessibility (Quality Rule CRITICAL) ─────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── GLOBAL TRANSITION LAYER — Secondary motion (hover, focus) ───────────── */
+
+/* All interactive elements: Premium transition defaults */
+button, a, [role="button"] {
+  transition: all var(--dur-quick) var(--ease-premium);
+}
+
+/* Card hover — lift effect (scale 1.01 + shadow) per state-feedback.md */
+.card-hover {
+  transition: transform var(--dur-standard) var(--ease-premium),
+              box-shadow var(--dur-standard) var(--ease-premium);
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(123, 61, 255, 0.12);
+}
+
+/* Custom scrollbars — AMBIENT layer */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(123, 61, 255, 0.18);
+  border-radius: 9999px;
+  transition: background var(--dur-quick) ease;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(123, 61, 255, 0.42); }
