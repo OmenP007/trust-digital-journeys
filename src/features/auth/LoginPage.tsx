@@ -7,6 +7,7 @@ import { useAuth } from '@/context/AuthContext';
 import { TrustLogo } from '@/components/ui/TrustLogo';
 import { useTheme } from '@/context/ThemeContext';
 import { Sun, Moon } from 'lucide-react';
+import { AuthMotion } from './AuthMotion';
 
 export const LoginPage: React.FC = () => {
   const { resolvedTheme, toggleTheme } = useTheme();
@@ -37,7 +38,9 @@ export const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="trust-auth-page min-h-screen bg-background flex flex-col justify-center py-12 sm:px-6 lg:px-8 transition-colors relative">
+    <div className="trust-auth-page trust-auth-split min-h-screen bg-background transition-colors relative">
+      <AuthMotion />
+      <div className="trust-auth-content">
       <Button size="icon" variant="ghost" className="trust-auth-theme" title="Basculer le thème" aria-label="Basculer le thème" onClick={toggleTheme}>{resolvedTheme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}</Button>
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center opacity-0 animate-enter stagger-1" style={{ animationFillMode: 'forwards' }}>
@@ -124,6 +127,7 @@ export const LoginPage: React.FC = () => {
             </Link>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

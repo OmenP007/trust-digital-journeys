@@ -18,3 +18,7 @@
 - [x] Add a logo loading animation and theme-aware homepage banner.
 - [x] Refresh all page presentation and shared controls without changing authentication, permissions or transaction behavior.
 - [x] Verify public flows, themes, loading and video; authenticated business flows remain unverified because the external TRUST service is not connected.
+
+# TRUST authentication animation
+- [x] Add a shared interactive left-side TRUST animation without changing either form.
+- [ ] Verify both pages, pointer interaction, themes, mobile and reduced motion.

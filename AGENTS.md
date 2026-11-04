@@ -16,3 +16,4 @@
 - The homepage uses scoped home tokens and client-effect GSAP choreography; keep animation cleanup and reduced-motion support to avoid affecting other TRUST pages.
 - Refresh imported page presentation through scoped semantic compatibility styles and shared UI; keep API calls, role gates and transaction state untouched.
 - Reuse TrustLoader for startup, router-pending and protected/checkout loading states; the bounded startup animation must never wait on external services.
+- Share the client-effect AuthMotion scene across auth pages; keep pointer motion isolated from form state and clean up GSAP with reduced-motion support.
