@@ -304,7 +304,7 @@ export const AdminPage: React.FC = () => {
       enabled: true,
       title: annTitle || 'Aperçu de la Pop-up TRUST',
       message: annMessage || 'Ceci est un aperçu en temps réel de votre pop-up d\'annonce avec image.',
-      imageUrl: annImage || 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80',
+      imageUrl: annImage || '/__l5e/assets-v1/61c39a0c-c8e4-4489-845b-70ac17d60a6d/trust-protection.jpg',
       badge: annBadge || 'Aperçu Direct',
       actionText: annActionText || 'Tester le Bouton',
       actionUrl: annActionUrl || '#',
@@ -1205,7 +1205,7 @@ export const AdminPage: React.FC = () => {
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="text-[10px] text-slate-400">Presets rapides :</span>
                     {[
-                      { label: 'FinTech / Sécurité', url: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80' },
+                      { label: 'FinTech / Sécurité', url: '/__l5e/assets-v1/61c39a0c-c8e4-4489-845b-70ac17d60a6d/trust-protection.jpg' },
                       { label: 'High-Tech / Crypto', url: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&auto=format&fit=crop&q=80' },
                       { label: 'E-commerce / Shopping', url: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&auto=format&fit=crop&q=80' },
                     ].map((p) => (

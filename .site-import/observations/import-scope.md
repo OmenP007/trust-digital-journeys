@@ -5,3 +5,7 @@ Excluded: .git at every depth, dependency folders, generated builds, Python runt
 Documented API /api/config/ returned 404 at https://0xseq-api.onrender.com; no verified service connected. Authenticated and payment controls remain blocked pending a working API.
 Original homepage observations: desktop and phone top, scroll sections, FAQ opening, announcement popup. Video readyState 4 and autoplay advancing. Desktop anchor navigation hidden on phone in source; no phone menu exists in original homepage. Source footer legal/support links are placeholders (#).
 Evidence: /tmp/browser/trust-import/source-* screenshots and popup DOM.
+
+Preview verification: desktop 1280×1800 and phone 390×844. All five homepage section landmarks reached and screenshot after wheel input; FAQ expands and collapses; login and registration navigation succeeds; protected dashboard redirects to login; invalid paylink displays an error rather than loading forever. Video advances and programmatic pause/play verified; original source exposes no playback button. No page errors. Build OK.
+Source build and current source differ slightly in typography/spacing; source code retained. Top desktop screenshot initially captured before theme effect and entrance animations settled; final settled capture checked separately. No static media fallback or normal-flow pinned-panel replacement added.
+Blocked: authenticated account/payment/wallet/admin flows require the unavailable external Django API. Python and Flutter apps cannot run in this project. Original footer placeholder links remain unchanged.

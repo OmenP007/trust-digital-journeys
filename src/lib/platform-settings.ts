@@ -38,7 +38,7 @@ export const DEFAULT_PLATFORM_SETTINGS: PlatformSettings = {
     message:
       'Vos fonds sont protégés par le protocole TRUST avec validation de livraison par code OTP unique.',
     imageUrl:
-      'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80',
+      '/__l5e/assets-v1/61c39a0c-c8e4-4489-845b-70ac17d60a6d/trust-protection.jpg',
     badge: 'Protection 100% Active',
     actionText: 'Découvrir la protection',
     actionUrl: '#how-it-works',

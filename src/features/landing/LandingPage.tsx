@@ -72,8 +72,8 @@ export const HeroMotionVideo: React.FC<HeroMotionVideoProps> = ({
 
   const videoSrc =
     resolvedTheme === 'dark'
-      ? '/trust-motion-sombre.mp4'
-      : '/trust-motion-clair.mp4';
+      ? '/__l5e/assets-v1/ecb091ff-7155-44cb-8bb8-b60b722bb8b6/trust-motion-sombre.mp4'
+      : '/__l5e/assets-v1/0c6e64d3-30a2-4975-8d71-d5da89ef8034/trust-motion-clair.mp4';
 
   useEffect(() => {
     setHasError(false);
@@ -142,8 +142,8 @@ const MotionBrandAsset: React.FC<{ resolvedTheme: string; className?: string }> 
 }) => {
   const src =
     resolvedTheme === 'dark'
-      ? '/trust-motion-sombre.svg'
-      : '/trust-motion-clair.svg';
+      ? '/__l5e/assets-v1/f3d44012-dbb8-44c3-8150-46de405968e3/trust-motion-sombre.svg'
+      : '/__l5e/assets-v1/1991700e-df0c-469d-832e-0f8e466186fe/trust-motion-clair.svg';
 
   return (
     <img
@@ -598,7 +598,7 @@ export const LandingPage: React.FC = () => {
                 <div className="mb-8 inline-flex items-center">
                   <div className="px-3.5 py-2 rounded-2xl bg-white/[0.06] border border-white/10 backdrop-blur-md shadow-lg shadow-black/25 transition-transform hover:scale-[1.02]">
                     <img
-                      src="/trust-loader-logo-sombre.svg"
+                      src="/__l5e/assets-v1/8f35bdb1-adb6-44e4-90d3-da8de428e99a/trust-loader-logo-sombre.svg"
                       alt="TRUST"
                       className="h-8 w-auto object-contain"
                     />
@@ -773,13 +773,13 @@ console.log(escrow.reference, escrow.status); // TR-98214-XOF, BLOCKED`}
             <span>© {new Date().getFullYear()} TRUST FinTech Escrow. Tous droits réservés.</span>
             <div className="flex items-center gap-2">
               <img
-                src="/trust-symbole.svg"
+                src="/__l5e/assets-v1/7c253326-7c8f-4aff-be96-bd7368e327d0/trust-symbole.svg"
                 alt=""
                 className="w-3.5 h-3.5 object-contain dark:hidden opacity-60"
                 aria-hidden="true"
               />
               <img
-                src="/trust-symbole-blanc.svg"
+                src="/__l5e/assets-v1/c25fd41f-cacf-469d-8536-8c4fe88d86d3/trust-symbole-blanc.svg"
                 alt=""
                 className="w-3.5 h-3.5 object-contain hidden dark:block opacity-60"
                 aria-hidden="true"
