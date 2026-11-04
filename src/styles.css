@@ -972,3 +972,7 @@ button, a, [role="button"] {
 .dark .trust-interface .dark\:border-slate-700 { border-color: var(--border); }
 .trust-interface .border-slate-800 { border-color: var(--border); }
 .dark .trust-interface .dark\:border-slate-800 { border-color: var(--border); }
+/* Crop the original video's empty margins without changing its source artwork. */
+.home-original-visual { width: 100%; height: 100%; overflow: hidden; display: grid; place-items: center; mix-blend-mode: var(--home-motion-blend); }
+.home-original-visual video { flex-shrink: 0; width: 540px; max-width: none; height: 304px; object-fit: cover; mix-blend-mode: normal; }
+@media (max-height: 700px) and (min-width: 761px) { .home-original-visual video { width: 440px; height: 248px; } }
