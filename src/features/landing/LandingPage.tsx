@@ -6,7 +6,6 @@ import { TrustLogo } from '@/components/ui/TrustLogo';
 import { useTheme } from '@/context/ThemeContext';
 import { useHomeMotion } from './useHomeMotion';
 import { PresentationVideo } from './components/PresentationVideo';
-import { OriginalMotion } from './components/OriginalMotion';
 import commerceHero from '@/assets/trust-commerce-hero.jpg';
 
 const navigation = [['#how-it-works', 'Fonctionnement'], ['#advantages', 'Avantages'], ['#solutions', 'Solutions'], ['#developers', 'Développeurs'], ['#faq', 'FAQ']];
@@ -52,7 +51,7 @@ export function LandingPage() {
         <img className="home-hero-image" src={commerceHero} alt="Une commerçante prépare une commande et un entrepreneur consulte son téléphone." width={1920} height={1088} fetchPriority="high" />
         <div className="home-hero-content home-container">
           <div data-home-enter className="home-eyebrow"><span className="home-live-dot" />LA CONFIANCE, À CHAQUE TRANSACTION</div>
-          <div data-home-enter><OriginalMotion /></div>
+          <div className="flex h-[100px] items-center justify-center mt-3 mb-4"><span className="dark:hidden"><TrustLogo theme="black" height={60} /></span><span className="hidden dark:block"><TrustLogo theme="white" height={60} /></span></div>
           <h1 id="home-title" data-home-enter><span>Payez en confiance.</span><span className="home-title-accent">Vendez sereinement.</span></h1>
           <p data-home-enter>Entre le paiement et la livraison,<br className="hidden sm:block" /> il y a TRUST. Vos fonds protégés, votre accord respecté.</p>
           <div data-home-enter className="home-hero-actions"><Button size="lg" onClick={() => navigate('/register')}>Créer mon compte <ArrowUpRight size={18} /></Button><a className="home-text-link" href="#presentation"><span className="home-play-icon">▶</span> Voir TRUST en action</a></div>
