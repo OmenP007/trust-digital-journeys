@@ -118,11 +118,11 @@ function toApiSettings(settings: Partial<PlatformSettings>): Partial<PlatformSet
           enabled: settings.announcement.enabled,
           title: settings.announcement.title,
           message: settings.announcement.message,
-          imageUrl: settings.announcement.imageUrl,
-          badge: settings.announcement.badge,
-          actionText: settings.announcement.actionText,
-          actionUrl: settings.announcement.actionUrl,
-          targetRole: settings.announcement.targetRole,
+          ...(settings.announcement.imageUrl ? { imageUrl: settings.announcement.imageUrl } : {}),
+          ...(settings.announcement.badge ? { badge: settings.announcement.badge } : {}),
+          ...(settings.announcement.actionText ? { actionText: settings.announcement.actionText } : {}),
+          ...(settings.announcement.actionUrl ? { actionUrl: settings.announcement.actionUrl } : {}),
+          ...(settings.announcement.targetRole ? { targetRole: settings.announcement.targetRole } : {}),
           createdAt: settings.announcement.createdAt,
         }
       : {};
