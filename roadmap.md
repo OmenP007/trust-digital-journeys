@@ -21,4 +21,4 @@
 
 # TRUST authentication animation
 - [x] Add a shared interactive left-side TRUST animation without changing either form.
-- [ ] Verify both pages, pointer interaction, themes, mobile and reduced motion.
+- [x] Verify both pages, pointer interaction, themes, mobile and reduced motion; live account access remains blocked by the external TRUST service.
