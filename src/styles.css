@@ -978,3 +978,6 @@ button, a, [role="button"] {
 @media (max-height: 700px) and (min-width: 761px) { .home-original-visual video { width: 440px; height: 248px; } }
 .home-original-visual { position: relative; }
 .home-original-visual video { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.home-original-visual video { width: 380px; height: 214px; }
+@media (max-height: 700px) and (min-width: 761px) { .home-original-visual video { width: 290px; height: 163px; } }
+@media (max-width: 760px) { .home-original-visual video { width: 330px; height: 186px; } }
