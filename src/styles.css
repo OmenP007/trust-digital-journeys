@@ -976,3 +976,5 @@ button, a, [role="button"] {
 .home-original-visual { width: 100%; height: 100%; overflow: hidden; display: grid; place-items: center; mix-blend-mode: var(--home-motion-blend); }
 .home-original-visual video { flex-shrink: 0; width: 540px; max-width: none; height: 304px; object-fit: cover; mix-blend-mode: normal; }
 @media (max-height: 700px) and (min-width: 761px) { .home-original-visual video { width: 440px; height: 248px; } }
+.home-original-visual { position: relative; }
+.home-original-visual video { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
