@@ -16,6 +16,7 @@ import { useAuth } from '@/context/AuthContext';
 import { formatFCFA, formatDate } from '@/lib/utils';
 import { Offer } from '@/types/escrow';
 import { TrustLogo } from '@/components/ui/TrustLogo';
+import { TrustLoader } from '@/components/ui/TrustLoader';
 
 export const PaylinkCheckoutPage: React.FC = () => {
   const { code } = useParams<{ code: string }>();
@@ -87,7 +88,7 @@ export const PaylinkCheckoutPage: React.FC = () => {
   if (loading || !offer) {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-[#0B0F14] flex items-center justify-center p-4">
-        <div className="w-8 h-8 border-2 border-[#7B3DFF] border-t-transparent rounded-full animate-spin" />
+        <TrustLoader />
       </div>
     );
   }

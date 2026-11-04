@@ -26,5 +26,5 @@ export function PageMotion({ children }: { children: ReactNode }) {
     return () => observer.disconnect();
   }, [pathname]);
 
-  return <div ref={container} key={pathname} className="trust-page-motion" data-motion-page={pathname}>{children}</div>;
+  return <div ref={container} key={pathname} className={`trust-page-motion${pathname === '/' ? '' : ' trust-interface'}`} data-motion-page={pathname}>{children}</div>;
 }
