@@ -1,9 +1,13 @@
 import React from 'react';
-import { Link as RouterLink, Navigate as RouterNavigate, Outlet, useLocation as useRouterLocation, useNavigate as useRouterNavigate, useParams as useRouterParams } from '@tanstack/react-router';
+import { Link as RouterLink, Navigate as RouterNavigate, Outlet, useLocation as useRouterLocation, useNavigate as useRouterNavigate, useRouter, useParams as useRouterParams } from '@tanstack/react-router';
 export { Outlet };
 export function useNavigate() {
  const navigate = useRouterNavigate();
- return (to: string, options?: {replace?: boolean; state?: unknown}) => navigate({href: to, replace: options?.replace});
+ const router = useRouter();
+ return (to: string | number, options?: {replace?: boolean; state?: unknown}) => {
+  if (typeof to === 'number') { router.history.go(to); return; }
+  return navigate({href: to, replace: options?.replace ?? false});
+ };
 }
 export const useLocation = useRouterLocation;
 export function useParams<T extends Record<string,string>>() { return useRouterParams({strict:false}) as Partial<T>; }
@@ -15,4 +19,4 @@ export function Link({to, className, ...props}: LinkProps) {
  return <RouterLink to={to} {...props} className={typeof className === 'function' ? className({isActive}) : className} />;
 }
 export const NavLink = Link;
-export function Navigate({to, replace}: {to: string; replace?: boolean; state?: unknown}) { return <RouterNavigate to={to} replace={replace} />; }
+export function Navigate({to, replace}: {to: string; replace?: boolean; state?: unknown}) { return <RouterNavigate to={to} replace={replace ?? false} />; }

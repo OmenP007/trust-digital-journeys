@@ -15,10 +15,10 @@ import {
   Copy,
   Check,
 } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
-import { Input } from '@/components/ui/Input';
+import { Button } from '@/components/ui/TrustButton';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/TrustCard';
+import { Badge } from '@/components/ui/TrustBadge';
+import { Input } from '@/components/ui/TrustInput';
 import { useAuth } from '@/context/AuthContext';
 import { api } from '@/lib/api';
 import { formatFCFA, formatDate, getRemainingTime } from '@/lib/utils';

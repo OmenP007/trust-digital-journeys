@@ -18,7 +18,7 @@ import {
   Moon,
   Play,
 } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/TrustButton';
 import { useTheme } from '@/context/ThemeContext';
 import { TrustLogo } from '@/components/ui/TrustLogo';
 

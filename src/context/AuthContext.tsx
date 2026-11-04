@@ -27,8 +27,8 @@ function profileFromToken(token: string, fallback: Partial<UserProfile> = {}): U
     email: decoded.email || fallback.email || '',
     role: (decoded.role || fallback.role || 'client') as UserRole,
     is_kyc_approved: decoded.is_kyc_approved ?? fallback.is_kyc_approved ?? false,
-    full_name: decoded.full_name || fallback.full_name,
-    phone: fallback.phone,
+    full_name: decoded.full_name || fallback.full_name || "",
+    phone: fallback.phone || "",
   };
 }
 
@@ -145,9 +145,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const profile: UserProfile =
         res.user ||
         profileFromToken(res.access, {
-          id: res.user_id,
+          id: res.user_id ?? 0,
           username: res.username || username,
-          email: res.email,
+          email: res.email ?? "",
           role: res.role as UserRole,
         });
       setUser(profile);

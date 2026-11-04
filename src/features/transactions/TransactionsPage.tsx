@@ -16,8 +16,8 @@ import {
   Percent,
   FileSpreadsheet,
 } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { Card } from '@/components/ui/Card';
+import { Button } from '@/components/ui/TrustButton';
+import { Card } from '@/components/ui/TrustCard';
 import { useAuth } from '@/context/AuthContext';
 import { api } from '@/lib/api';
 import { formatFCFA, formatDate } from '@/lib/utils';

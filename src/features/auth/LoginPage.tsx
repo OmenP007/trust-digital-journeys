@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate, useSearchParams, Link } from '@/lib/navigation';
 import { Lock, User, Eye, EyeOff, ArrowRight, ShieldCheck, Sparkles, AlertCircle } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input';
+import { Button } from '@/components/ui/TrustButton';
+import { Input } from '@/components/ui/TrustInput';
 import { useAuth } from '@/context/AuthContext';
 import { TrustLogo } from '@/components/ui/TrustLogo';
 

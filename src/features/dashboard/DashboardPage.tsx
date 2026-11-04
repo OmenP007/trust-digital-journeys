@@ -7,9 +7,9 @@ import {
 import {
   AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer,
 } from 'recharts';
-import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
+import { Button } from '@/components/ui/TrustButton';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/TrustCard';
+import { Badge } from '@/components/ui/TrustBadge';
 import { useAuth } from '@/context/AuthContext';
 import { api } from '@/lib/api';
 import { formatFCFA, formatDate } from '@/lib/utils';

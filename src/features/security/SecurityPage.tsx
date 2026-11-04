@@ -8,9 +8,9 @@ import {
   CheckCircle,
   Upload,
 } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { Input } from '@/components/ui/Input';
+import { Button } from '@/components/ui/TrustButton';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/TrustCard';
+import { Input } from '@/components/ui/TrustInput';
 import { useAuth } from '@/context/AuthContext';
 import { api } from '@/lib/api';
 import { KYCIdType } from '@/types/escrow';

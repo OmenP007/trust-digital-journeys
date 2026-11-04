@@ -12,9 +12,9 @@ import {
   AlertCircle,
   ExternalLink,
 } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { Input } from '@/components/ui/Input';
+import { Button } from '@/components/ui/TrustButton';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/TrustCard';
+import { Input } from '@/components/ui/TrustInput';
 import { formatFCFA, formatDate } from '@/lib/utils';
 import { useAuth } from '@/context/AuthContext';
 import { api } from '@/lib/api';
@@ -183,7 +183,7 @@ export const WalletPage: React.FC = () => {
     date: formatDate(t.completed_at || t.created_at),
     timestamp: new Date(t.completed_at || t.created_at).getTime(),
     amount: Number(t.amount),
-    phone: t.phone,
+    ...(t.phone ? {phone: t.phone} : {}),
     status: t.status,
   }));
 

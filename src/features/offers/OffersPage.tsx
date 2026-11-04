@@ -13,9 +13,9 @@ import {
   QrCode,
   X,
 } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { Input } from '@/components/ui/Input';
+import { Button } from '@/components/ui/TrustButton';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/TrustCard';
+import { Input } from '@/components/ui/TrustInput';
 import { api } from '@/lib/api';
 import { formatFCFA, formatDate } from '@/lib/utils';
 import { Offer } from '@/types/escrow';

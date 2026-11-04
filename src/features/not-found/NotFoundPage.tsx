@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from '@/lib/navigation';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/TrustButton';
 import { Home, ArrowLeft } from 'lucide-react';
 import { TrustLogo } from '@/components/ui/TrustLogo';
 

@@ -29,10 +29,10 @@ import {
   Send,
   Banknote,
 } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
-import { Input } from '@/components/ui/Input';
+import { Button } from '@/components/ui/TrustButton';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/TrustCard';
+import { Badge } from '@/components/ui/TrustBadge';
+import { Input } from '@/components/ui/TrustInput';
 import { useAuth } from '@/context/AuthContext';
 import { useToast } from '@/context/ToastContext';
 import { api } from '@/lib/api';
@@ -229,7 +229,7 @@ export const AdminPage: React.FC = () => {
       enabled: annEnabled,
       title: annTitle,
       message: annMessage,
-      imageUrl: annImage || undefined,
+      ...(annImage ? {imageUrl: annImage} : {}),
       badge: annBadge,
       actionText: annActionText,
       actionUrl: annActionUrl,

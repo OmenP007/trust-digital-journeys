@@ -39,6 +39,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       return () => mediaQuery.removeEventListener('change', listener);
     } else {
       applyTheme(theme === 'dark');
+      return undefined;
     }
   }, [theme]);
 

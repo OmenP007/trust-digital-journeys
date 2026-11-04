@@ -84,7 +84,7 @@ export const MultiFontTrust: React.FC = () => {
 
           setFontIndices(prev => {
             const next = [...prev];
-            next[letterIdx] = (next[letterIdx] + 1) % FONT_ARCHETYPES.length;
+            next[letterIdx] = ((next[letterIdx] ?? 0) + 1) % FONT_ARCHETYPES.length;
             return next;
           });
 
@@ -119,7 +119,7 @@ export const MultiFontTrust: React.FC = () => {
       rolls++;
       setFontIndices(prev => {
         const next = [...prev];
-        next[letterIdx] = (next[letterIdx] + Math.floor(Math.random() * (FONT_ARCHETYPES.length - 1)) + 1) % FONT_ARCHETYPES.length;
+        next[letterIdx] = ((next[letterIdx] ?? 0) + Math.floor(Math.random() * (FONT_ARCHETYPES.length - 1)) + 1) % FONT_ARCHETYPES.length;
         return next;
       });
 
@@ -160,7 +160,8 @@ export const MultiFontTrust: React.FC = () => {
       {/* ─── MULTI-FONT KINETIC H1 DISPLAY ─── */}
       <div className="relative inline-flex items-center justify-center gap-0.5 sm:gap-1.5 py-1">
         {WORD.map((char, index) => {
-          const font = FONT_ARCHETYPES[fontIndices[index]];
+          const font = FONT_ARCHETYPES[fontIndices[index] ?? 0];
+          if (!font) return null;
           const isAnimating = animatingIndices[index];
 
           return (

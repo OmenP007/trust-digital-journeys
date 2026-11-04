@@ -9,8 +9,8 @@ import {
   Sparkles,
   QrCode,
 } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { Card, CardContent } from '@/components/ui/Card';
+import { Button } from '@/components/ui/TrustButton';
+import { Card, CardContent } from '@/components/ui/TrustCard';
 import { api } from '@/lib/api';
 import { useAuth } from '@/context/AuthContext';
 import { formatFCFA, formatDate } from '@/lib/utils';

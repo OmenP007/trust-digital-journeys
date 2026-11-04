@@ -12,7 +12,7 @@ import {
   PlatformSettingsApi,
 } from '@/types/escrow';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+const API_BASE_URL = import.meta.env['VITE_API_URL'] || '';
 export const isApiConfigured = Boolean(API_BASE_URL);
 
 const ACCESS_TOKEN_KEY = 'trust_token';

@@ -16,9 +16,9 @@ import {
   Check,
   Lock,
 } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { Card, CardContent } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
+import { Button } from '@/components/ui/TrustButton';
+import { Card, CardContent } from '@/components/ui/TrustCard';
+import { Badge } from '@/components/ui/TrustBadge';
 import { api } from '@/lib/api';
 import { formatFCFA, formatDate, getRemainingTime } from '@/lib/utils';
 import { EscrowTransaction, EscrowStatus } from '@/types/escrow';

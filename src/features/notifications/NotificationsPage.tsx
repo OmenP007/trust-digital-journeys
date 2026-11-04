@@ -10,8 +10,8 @@ import {
   RefreshCw,
   ChevronRight,
 } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { Card } from '@/components/ui/Card';
+import { Button } from '@/components/ui/TrustButton';
+import { Card } from '@/components/ui/TrustCard';
 import { useAppNotifications } from '@/hooks/useAppNotifications';
 import { formatDate } from '@/lib/utils';
 
